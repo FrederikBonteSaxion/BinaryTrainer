@@ -29,17 +29,30 @@ public class HexBinUtils {
         if (answer.startsWith("0x")) {
             answer = answer.substring(2);
         }
-        return Integer.parseInt(answer, 16);
+        if (answer.trim().length()==0) {
+            return 0;
+        } else {
+            // @TODO Why does 0x10000 return 4096???
+            return Integer.parseInt(answer, 16);
+        }
     }
 
     public static int parseDecimalAnswer(String answer) throws NumberFormatException {
-        return Integer.parseInt(answer);
+        if (answer.trim().length()==0) {
+            return 0;
+        } else {
+            return Integer.parseInt(answer);
+        }
     }
 
     public static int parseBinaryAnswer(String answer) throws NumberFormatException {
         if (answer.startsWith("0b")) {
             answer = answer.substring(2);
         }
-        return Integer.parseInt(answer, 2);
+        if (answer.trim().length()==0) {
+            return 0;
+        } else {
+            return Integer.parseInt(answer, 2);
+        }
     }
 }
