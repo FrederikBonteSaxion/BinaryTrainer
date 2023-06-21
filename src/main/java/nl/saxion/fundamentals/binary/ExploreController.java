@@ -6,8 +6,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.Background;
-import javafx.scene.paint.Color;
 import nl.saxion.fundamentals.utils.HexBinUtils;
 
 import java.net.URL;
@@ -37,7 +35,7 @@ public class ExploreController implements Initializable {
     public void updateHexadecimal(KeyEvent keyEvent) {
         try {
             int value = HexBinUtils.parseHexadecimal(txtHexadecimal.getText());
-            clearBackgrounds();
+            clearErrors();
             txtBinary.setText(HexBinUtils.toBinary(value, 16));
             txtDecimal.setText(HexBinUtils.toDecimal(value, 16));
         } catch (NumberFormatException ex) {
@@ -46,16 +44,17 @@ public class ExploreController implements Initializable {
         }
     }
 
-    private void clearBackgrounds() {
+    private void clearErrors() {
         txtDecimal.setStyle("-fx-background-color: white");
         txtBinary.setStyle("-fx-background-color: white");
         txtHexadecimal.setStyle("-fx-background-color: white");
+        txtError.setText("");
     }
 
     public void updateBinary(KeyEvent keyEvent) {
         try {
             int value = HexBinUtils.parseBinaryAnswer(txtBinary.getText());
-            clearBackgrounds();
+            clearErrors();
             txtHexadecimal.setText(HexBinUtils.toHexadecimal(value, 16));
             txtDecimal.setText(HexBinUtils.toDecimal(value, 16));
         } catch (NumberFormatException ex) {
@@ -67,7 +66,7 @@ public class ExploreController implements Initializable {
     public void updateDecimal(KeyEvent keyEvent) {
         try {
             int value = HexBinUtils.parseDecimalAnswer(txtDecimal.getText());
-            clearBackgrounds();
+            clearErrors();
             txtHexadecimal.setText(HexBinUtils.toHexadecimal(value, 16));
             txtBinary.setText(HexBinUtils.toBinary(value, 16));
         } catch (NumberFormatException ex) {
