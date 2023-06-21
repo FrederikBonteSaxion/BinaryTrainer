@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.collections.FXCollections?>
+<GridPane xmlns="http://javafx.com/javafx"
+          xmlns:fx="http://javafx.com/fxml"
+          fx:controller="nl.saxion.fundamentals.binary.ConvertController"
+          prefHeight="800.0" prefWidth="600.0" vgap="5" hgap="5">
+    <columnConstraints>
+        <ColumnConstraints percentWidth="50"/>
+        <ColumnConstraints percentWidth="100"/>
+    </columnConstraints>
+    <Label id="title" text="Conversion" GridPane.columnSpan="2" GridPane.halignment="CENTER"/>
+    <Label text="Level" GridPane.rowIndex="1" GridPane.columnIndex="0" GridPane.halignment="RIGHT" />
+    <Label text="Type" GridPane.rowIndex="2" GridPane.columnIndex="0" GridPane.halignment="RIGHT" />
+    <Label text="Question" GridPane.rowIndex="4" GridPane.columnIndex="0" GridPane.halignment="RIGHT" />
+    <Label text="Answer" GridPane.rowIndex="5" GridPane.columnIndex="0" GridPane.halignment="RIGHT" />
+    <Label text="Result" GridPane.rowIndex="6" GridPane.columnIndex="0" GridPane.halignment="RIGHT" />
+
+    <ComboBox fx:id="cmbLevel" GridPane.rowIndex="1" GridPane.columnIndex="1" promptText="Choose your level">
+        <items>
+            <FXCollections fx:factory="observableArrayList">
+                <String fx:value="Easy (Nibble)" />
+                <String fx:value="Medium (Byte)"  />
+                <String fx:value="Hard (Word)" />
+                <String fx:value="Insane (Integer)" />
+            </FXCollections>
+        </items>
+    </ComboBox>
+    <ComboBox fx:id="cmbType" GridPane.rowIndex="2" GridPane.columnIndex="1" promptText="Choose your task" >
+        <items>
+            <FXCollections fx:factory="observableArrayList">
+                <String fx:value="123 -> 0b1001" />
+                <String fx:value="0b0110 -> 123" />
+                <String fx:value="0xFF -> 0b0110" />
+                <String fx:value="0b0110 -> 0xFF" />
+                <String fx:value="123 -> 0xFF" />
+                <String fx:value="0xFF -> 123" />
+                <String fx:value="Random" />
+            </FXCollections>
+        </items>
+    </ComboBox>
+    <Button fx:id="btnStart" text="Start" GridPane.rowIndex="3" GridPane.columnIndex="1" onMouseClicked="#resetGame" />
+    <TextField fx:id="txtQuestion" editable="false" GridPane.rowIndex="4" GridPane.columnIndex="1" />
+    <TextField fx:id="txtAnswer" GridPane.rowIndex="5" GridPane.columnIndex="1" />
+    <TextField fx:id="txtResult" GridPane.rowIndex="6" GridPane.columnIndex="1" />
+    <Button fx:id="btnCheck" text="Check" defaultButton="true" GridPane.rowIndex="7" GridPane.columnIndex="1" onMouseClicked="#checkAnswer" />
+
+
+</GridPane>

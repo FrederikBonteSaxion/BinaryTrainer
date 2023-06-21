@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+
+<TabPane xmlns:fx="http://javafx.com/fxml"
+         fx:controller="nl.saxion.fundamentals.binary.MainController">
+    <tabs>
+        <Tab fx:id="tabWelcome" text="Welcome" closable="true">
+            <fx:include source="welcome-view.fxml"/>
+        </Tab>
+        <Tab fx:id="tabExplore" text="Explore" closable="true">
+            <fx:include source="welcome-view.fxml"/>
+        </Tab>
+        <Tab fx:id="tabConvert" text="Conversion" closable="false">
+            <fx:include source="convert-view.fxml" alignment="TOP_CENTER" prefWidth="Infinity"/>
+        </Tab>
+        <Tab fx:id="tabIncrease" text="Increase/Decrease" closable="false">
+            <fx:include source="convert-view.fxml" alignment="TOP_CENTER" prefWidth="Infinity"/>
+        </Tab>
+        <Tab fx:id="tabAddition" text="Addition" closable="false">
+            <fx:include source="convert-view.fxml" alignment="TOP_CENTER" prefWidth="Infinity"/>
+        </Tab>
+    </tabs>
+</TabPane>
