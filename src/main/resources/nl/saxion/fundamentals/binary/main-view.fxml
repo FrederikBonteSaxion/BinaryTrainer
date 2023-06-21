@@ -9,7 +9,7 @@
             <fx:include source="welcome-view.fxml"/>
         </Tab>
         <Tab fx:id="tabExplore" text="Explore" closable="true">
-            <fx:include source="welcome-view.fxml"/>
+            <fx:include source="explore-view.fxml"/>
         </Tab>
         <Tab fx:id="tabConvert" text="Conversion" closable="false">
             <fx:include source="convert-view.fxml" alignment="TOP_CENTER" prefWidth="Infinity"/>

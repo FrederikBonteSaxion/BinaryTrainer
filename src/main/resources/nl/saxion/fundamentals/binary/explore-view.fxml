@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.collections.FXCollections?>
+<GridPane xmlns="http://javafx.com/javafx"
+          xmlns:fx="http://javafx.com/fxml"
+          fx:controller="nl.saxion.fundamentals.binary.ExploreController"
+          prefHeight="800.0" prefWidth="600.0" vgap="5" hgap="5">
+    <columnConstraints>
+        <ColumnConstraints percentWidth="50"/>
+        <ColumnConstraints percentWidth="100"/>
+    </columnConstraints>
+    <Label id="title" text="Explore" GridPane.columnSpan="2" GridPane.halignment="CENTER"/>
+    <Label text="Decimal" GridPane.rowIndex="3" GridPane.columnIndex="0" GridPane.halignment="RIGHT" />
+    <Label text="Binary" GridPane.rowIndex="4" GridPane.columnIndex="0" GridPane.halignment="RIGHT" />
+    <Label text="Hexadecimal" GridPane.rowIndex="5" GridPane.columnIndex="0" GridPane.halignment="RIGHT" />
+
+    <TextField fx:id="txtDecimal" GridPane.rowIndex="3" GridPane.columnIndex="1" onKeyTyped="#updateDecimal" />
+    <TextField fx:id="txtBinary" GridPane.rowIndex="4" GridPane.columnIndex="1" onKeyTyped="#updateBinary"  />
+    <TextField fx:id="txtHexadecimal" GridPane.rowIndex="5" GridPane.columnIndex="1"  onKeyTyped="#updateHexadecimal" />
+    <Button fx:id="btnRandom" text="Random" defaultButton="true" GridPane.rowIndex="6" GridPane.columnIndex="1" onMouseClicked="#showRandom" />
+    <TextField fx:id="txtError" editable="false" GridPane.rowIndex="8" GridPane.columnIndex="0" GridPane.columnSpan="2" />
+</GridPane>
