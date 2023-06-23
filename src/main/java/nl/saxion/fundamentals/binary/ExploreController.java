@@ -3,6 +3,7 @@ package nl.saxion.fundamentals.binary;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
@@ -13,6 +14,11 @@ import java.util.Random;
 import java.util.ResourceBundle;
 
 public class ExploreController implements Initializable {
+    public static final String HELP_TEXT =
+            "In this screen you can type in any of the three fields below.\n" +
+            "When you change a value, the other two fields will show that same value in their notation, either decimal, binary of hexadecimal.\n" +
+            "\n" +
+            "You can also press the Random button to choose a random value.";
     private static final Random RNG = new Random();
     @FXML
     public TextField txtDecimal;
@@ -24,6 +30,7 @@ public class ExploreController implements Initializable {
     public Button btnRandom;
     @FXML
     public TextField txtError;
+    public Label lblHelp;
 
     public void showRandom(MouseEvent mouseEvent) {
         int value = RNG.nextInt(256*256);
@@ -78,5 +85,6 @@ public class ExploreController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         showRandom(null);
+        lblHelp.setText(HELP_TEXT);
     }
 }

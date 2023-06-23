@@ -20,5 +20,8 @@
         <Tab fx:id="tabAddition" text="Addition" closable="false">
             <fx:include source="convert-view.fxml" alignment="TOP_CENTER" prefWidth="Infinity"/>
         </Tab>
+        <Tab fx:id="tabTwosCompliment" text="Twos compliment" closable="false">
+            <fx:include source="convert-view.fxml" alignment="TOP_CENTER" prefWidth="Infinity"/>
+        </Tab>
     </tabs>
 </TabPane>
