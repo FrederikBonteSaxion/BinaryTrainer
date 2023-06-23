@@ -22,7 +22,7 @@ public class HexBinUtils {
 
     public static String toHexadecimal(int value, int length) {
         String result = Integer.toHexString(value);
-        return "0x"+LEADING.substring(0, length-result.length())+result;
+        return "0x"+LEADING.substring(0, (length/4)-result.length())+result;
     }
 
     public static int parseHexadecimal(String answer) throws NumberFormatException {

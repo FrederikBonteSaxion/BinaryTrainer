@@ -37,7 +37,11 @@ public class ConvertController implements Initializable {
 
     private void generateQuestion() {
         int level = LEVEL[cmbLevel.getSelectionModel().getSelectedIndex()];
-        switch (cmbType.getSelectionModel().getSelectedIndex()) {
+        int selection = cmbType.getSelectionModel().getSelectedIndex();
+        if (selection==6) {
+            selection = RNG.nextInt(6);
+        }
+        switch (selection) {
             case 0: {
                 generateQuestion(level, HexBinUtils::toDecimal, HexBinUtils::toBinary);
                 txtAnswer.setPromptText(HexBinUtils.getBinaryPrompt(LENGTH[cmbLevel.getSelectionModel().getSelectedIndex()]));
@@ -76,7 +80,7 @@ public class ConvertController implements Initializable {
 
     private void generateQuestion(int level, BiFunction<Integer, Integer, String> question, BiFunction<Integer, Integer, String> answer) {
         this.question = RNG.nextInt((level<=256)?0:500, level);
-        int length = LENGTH[cmbLevel.getSelectionModel().getSelectedIndex()]/4;
+        int length = LENGTH[cmbLevel.getSelectionModel().getSelectedIndex()];
         this.txtQuestion.setText(question.apply(this.question, length));
         this.answer = answer.apply(this.question, length);
         this.txtAnswer.setText("");
@@ -92,7 +96,7 @@ public class ConvertController implements Initializable {
         } else {
             value = checkDecimalAnswer();
         }
-        if (value==question) {
+        if (answer.equals(txtAnswer.getText())) {
             txtResult.setText("CORRECT!!!");
         } else {
             txtResult.setText("WRONG!!!");
