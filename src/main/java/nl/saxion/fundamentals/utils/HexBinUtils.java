@@ -13,7 +13,11 @@ public class HexBinUtils {
 
     public static String toBinary(int value, int length) {
         String result = Integer.toBinaryString(value);
-        return "0b"+LEADING.substring(0, length-result.length())+result;
+        if (result.length()<length) {
+            return "0b" + LEADING.substring(0, length - result.length()) + result;
+        } else {
+            return "0b"+result;
+        }
     }
 
     public static String toDecimal(int value, int length) {
@@ -22,7 +26,11 @@ public class HexBinUtils {
 
     public static String toHexadecimal(int value, int length) {
         String result = Integer.toHexString(value);
-        return "0x"+LEADING.substring(0, (length/4)-result.length())+result;
+        if (result.length()<length) {
+            return "0x" + LEADING.substring(0, length - result.length()) + result;
+        } else {
+            return "0x" + result;
+        }
     }
 
     public static int parseHexadecimal(String answer) throws NumberFormatException {

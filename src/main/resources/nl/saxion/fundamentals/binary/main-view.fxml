@@ -18,7 +18,7 @@
             <fx:include source="incdec-view.fxml" alignment="TOP_CENTER" prefWidth="Infinity"/>
         </Tab>
         <Tab fx:id="tabAddition" text="Addition" closable="false">
-            <fx:include source="convert-view.fxml" alignment="TOP_CENTER" prefWidth="Infinity"/>
+            <fx:include source="addition-view.fxml" alignment="TOP_CENTER" prefWidth="Infinity"/>
         </Tab>
         <Tab fx:id="tabTwosCompliment" text="Twos compliment" closable="false">
             <fx:include source="convert-view.fxml" alignment="TOP_CENTER" prefWidth="Infinity"/>
