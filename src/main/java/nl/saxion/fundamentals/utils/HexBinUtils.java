@@ -15,6 +15,8 @@ public class HexBinUtils {
         String result = Integer.toBinaryString(value);
         if (result.length()<length) {
             return "0b" + LEADING.substring(0, length - result.length()) + result;
+        } else if (result.length()>length) {
+            return "0b" + result.substring(result.length()-length);
         } else {
             return "0b"+result;
         }
